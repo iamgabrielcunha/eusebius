@@ -10,7 +10,9 @@ All changes arrive as pull requests. The core team reviews all PRs before anythi
 
 ## AI transparency policy
 
-We welcome AI-assisted contributions. Using AI tools (GitHub Copilot, Claude, ChatGPT, etc.) to write code, draft data entries, or produce any other content in this repository is allowed. There is no shame in it — but it must be disclosed.
+We see AI as a tool — the same way C++ or Python is a tool. It has its place, and using it well is a skill. That said, we prefer you use the gift God gave you: your brain. Think first. Use AI to assist, not to replace your own reasoning and judgement.
+
+AI-assisted contributions are allowed and welcome. There is no shame in using AI tools (GitHub Copilot, Claude, ChatGPT, etc.) to write code, draft data entries, or produce other content. But it must be disclosed.
 
 **What disclosure looks like:**
 
