@@ -13,11 +13,15 @@ YAML files in `data/` are the source of truth → `tools/load.ts` validates and 
 ## Non-negotiable rules
 
 1. **Never write a bare date or relationship on an entity.** Everything goes through the Claim schema. See `docs/00-vision-and-requirements.md` §8 and D-006.
-2. **Never mark a claim `verified` in code or data.** Only Gabriel does that, manually, after checking a fetched source.
+2. **Never mark a claim `verified` in code or data.** Only a human reviewer does that, manually, after checking a fetched source. It cannot be automated.
 3. **Never store a citation without a fetched source.** See D-016 and the sourcing rule in CONTRIBUTING.md.
 4. **All human-readable strings are language maps** — `{en: "…", "pt-BR": "…"}`. Never a bare string in a data field.
 5. **Confidence display always shows** the numeric badge (0–100), the gradient, and the plain-language status label ("verified" / "theorised"). See D-019.
 6. **Relationships carry `evidence_direction`** — record which direction of a connection is evidenced and which is inferred. See D-019.
+
+## AI usage in this project
+
+AI tools are welcome. All AI-assisted contributions must be disclosed in the PR description (tool used, what it produced, what was reviewed). See CONTRIBUTING.md for the full policy. When generating data, always set `status: ai_suggested` — never `verified`.
 
 ## Stack
 
