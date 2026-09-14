@@ -6,7 +6,24 @@ Read `docs/00-vision-and-requirements.md` (what it is and is not) and `docs/01-d
 
 ## How contributions work
 
-All changes arrive as pull requests. Gabriel is the sole reviewer in v1. There is no in-app editing.
+All changes arrive as pull requests. The core team reviews all PRs before anything is merged. There is no in-app editing.
+
+## AI transparency policy
+
+We welcome AI-assisted contributions. Using AI tools (GitHub Copilot, Claude, ChatGPT, etc.) to write code, draft data entries, or produce any other content in this repository is allowed. There is no shame in it — but it must be disclosed.
+
+**What disclosure looks like:**
+
+- In your PR description, include an `## AI usage` section listing:
+  - Which tool(s) you used (e.g. "Claude Sonnet 4.6 via Claude Code")
+  - What you used it for (e.g. "generated the initial YAML structure for the entity file", "suggested the TypeScript types for the loader")
+  - What you reviewed or changed afterwards
+- If an entire file was AI-generated and lightly edited, say so.
+- If you used AI only for autocomplete or minor suggestions, a single sentence is enough.
+
+PRs with AI-assisted content will receive an `ai-assisted` label. This is a transparency flag, not a quality judgement. AI-assisted PRs go through exactly the same review process as any other.
+
+**For data specifically:** the `ai_suggested` status already exists in the pipeline (see below). AI-generated claims and relationships must enter as `ai_suggested` and cannot become `verified` without a human reviewer taking an explicit action.
 
 ## The status pipeline
 
