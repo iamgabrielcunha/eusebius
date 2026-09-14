@@ -1,0 +1,12 @@
+{
+  "name": "eusebius",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@12.4.1",
+  "scripts": {
+    "dev": "pnpm --filter @eusebius/web dev",
+    "build-data": "pnpm --filter @eusebius/loader run load",
+    "validate": "pnpm --filter @eusebius/loader run validate",
+    "test": "pnpm -r run test"
+  }
+}

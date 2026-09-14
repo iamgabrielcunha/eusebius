@@ -1,0 +1,9 @@
+{
+  "name": "@eusebius/loader",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "validate": "echo 'Loader not yet implemented (Stage 1)'",
+    "load": "echo 'Loader not yet implemented (Stage 1)'"
+  }
+}

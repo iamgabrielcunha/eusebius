@@ -1,0 +1,8 @@
+{
+  "name": "@eusebius/chronology",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "echo 'Chronology engine not yet implemented (Stage 2)'"
+  }
+}
