@@ -70,6 +70,10 @@ make test
 
 ---
 
+## Status
+
+See [`STATUS.md`](STATUS.md) for what's built, what's next, and how to resume a session.
+
 ## Contributing
 
 We are a team. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request — it covers the data format, the status pipeline, and the AI transparency policy.
