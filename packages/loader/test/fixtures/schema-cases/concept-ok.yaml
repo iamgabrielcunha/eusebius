@@ -1,0 +1,19 @@
+schema: concept
+expect: valid
+doc:
+  id: concept/justification
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: concept
+  label: {en: Justification}
+  summary: {en: How a sinner is counted righteous before God.}
+  claims:
+    - id: view-reformed
+      kind: view
+      model: model-independent
+      value: {tradition: {ref: tradition/reformed}, summary: {en: Forensic declaration.}}
+      precision: not_applicable
+      confidence: high
+      basis: tradition
+      status: under_review
+      evidence: []
+      why_uncertain: {en: x}

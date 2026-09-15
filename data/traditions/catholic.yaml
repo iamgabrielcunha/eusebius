@@ -1,0 +1,17 @@
+id: tradition/catholic
+uuid: d24de80a-f8e6-40ca-a428-f808dcffc73e
+type: tradition
+label: {en: "Catholic tradition", pt-BR: "Tradição Católica"}
+summary:
+  en: "The Roman Catholic Church's teaching as defined by its councils and magisterium; on justification, chiefly the Decree on Justification of the Council of Trent (1547) and the Catechism of the Catholic Church."
+  pt-BR: "O ensino da Igreja Católica Romana conforme definido por seus concílios e magistério; sobre a justificação, principalmente o Decreto sobre a Justificação do Concílio de Trento (1547) e o Catecismo da Igreja Católica."
+relationships:
+  - id: discusses-justification
+    type: DISCUSSES
+    target: {ref: concept/justification}
+    explanation:
+      en: "Trent's Decree on Justification is the tradition's defining statement; the View is recorded on the concept."
+    strength: interpretive
+    evidence_direction: source_to_target
+    status: ai_suggested
+    evidence: []

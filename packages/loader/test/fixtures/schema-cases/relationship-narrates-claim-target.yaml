@@ -1,0 +1,11 @@
+schema: relationship
+expect: invalid
+error_contains: ref
+doc:
+  type: NARRATES
+  target: {claim: "#x"}
+  explanation: {en: x}
+  strength: direct
+  evidence_direction: both
+  status: under_review
+  evidence: []

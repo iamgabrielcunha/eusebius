@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json",
+  "title": "Entity (base)",
+  "description": "Fields shared by every graph node (§8). Entities carry no bare dates or relationships: everything is in claims and relationships (D-006).",
+  "type": "object",
+  "required": [
+    "id",
+    "uuid",
+    "type",
+    "label"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/id"
+    },
+    "uuid": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/uuid",
+      "description": "Immutable v4 UUID for external linking. Generated once; never changed."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "person",
+        "group",
+        "event",
+        "place",
+        "period",
+        "passage",
+        "work",
+        "concept",
+        "tradition",
+        "artefact",
+        "technology",
+        "source",
+        "media",
+        "language",
+        "term"
+      ]
+    },
+    "label": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "summary": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "original": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/original-term"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+      }
+    },
+    "external_ids": {
+      "type": "object",
+      "description": "Identifiers in external schemes. osis, pleiades and wikidata are pattern-checked; other keys are free-form strings.",
+      "properties": {
+        "osis": {
+          "type": "string",
+          "description": "OSIS reference: Book, Book.ch, Book.ch.v, or a range with '-'.",
+          "pattern": "^[1-4]?[A-Z][A-Za-z]+(\\.[0-9]+(\\.[0-9]+)?)?(-[1-4]?[A-Z][A-Za-z]+(\\.[0-9]+(\\.[0-9]+)?)?)?$"
+        },
+        "pleiades": {
+          "type": "string",
+          "description": "Pleiades place id, numeric string.",
+          "pattern": "^[0-9]+$"
+        },
+        "wikidata": {
+          "type": "string",
+          "pattern": "^Q[0-9]+$"
+        }
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/claim.schema.json"
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/relationship.schema.json"
+      }
+    },
+    "notes": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    }
+  }
+}

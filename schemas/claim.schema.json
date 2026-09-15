@@ -1,0 +1,277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/claim.schema.json",
+  "title": "Claim",
+  "description": "A statement about an entity: a date, an attribute, or a View (D-006). Carries model, value, precision, confidence, basis, status, evidence and why_uncertain (D-008). An Interpretation is a claim with an interpretive basis and attributed_to.",
+  "type": "object",
+  "required": [
+    "id",
+    "kind",
+    "model",
+    "value",
+    "precision",
+    "confidence",
+    "basis",
+    "status",
+    "evidence",
+    "why_uncertain"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/slug",
+      "description": "Local claim id, unique within the entity file."
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "date",
+        "attribute",
+        "view"
+      ]
+    },
+    "property": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/slug",
+      "description": "What is claimed: birth, death, accession, floruit, start, end, composition, location, name…"
+    },
+    "model": {
+      "description": "The chronological model under which the claim holds. Date claims must name a model; attribute and view claims may be model-independent.",
+      "oneOf": [
+        {
+          "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+        },
+        {
+          "const": "model-independent"
+        }
+      ]
+    },
+    "assumption_set": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    },
+    "value": {
+      "description": "Shape depends on kind; see the conditional rules."
+    },
+    "precision": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/date.schema.json#/$defs/precision"
+    },
+    "confidence": {
+      "$ref": "#/$defs/confidence"
+    },
+    "basis": {
+      "$ref": "#/$defs/basis"
+    },
+    "status": {
+      "$ref": "#/$defs/status"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/evidence.schema.json"
+      }
+    },
+    "why_uncertain": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "attributed_to": {
+      "type": "array",
+      "description": "Traditions, scholars or sources that hold this position (D-012 proponents; §8 Interpretation).",
+      "items": {
+        "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+      }
+    },
+    "notes": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "date"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "property"
+        ],
+        "properties": {
+          "value": {
+            "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/date.schema.json#/$defs/date-value"
+          },
+          "model": {
+            "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "attribute"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "property"
+        ],
+        "properties": {
+          "value": {
+            "oneOf": [
+              {
+                "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+              }
+            ]
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "view"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "type": "object",
+            "required": [
+              "tradition",
+              "summary"
+            ],
+            "properties": {
+              "tradition": {
+                "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+              },
+              "summary": {
+                "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+              },
+              "key_texts": {
+                "type": "array",
+                "items": {
+                  "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    {
+      "description": "D-007: Model A dates are computed, never typed in.",
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "date"
+          },
+          "model": {
+            "type": "object",
+            "required": [
+              "ref"
+            ],
+            "properties": {
+              "ref": {
+                "const": "model/a-biblical-literal"
+              }
+            }
+          }
+        },
+        "required": [
+          "model"
+        ],
+        "type": "object"
+      },
+      "then": {
+        "properties": {
+          "value": {
+            "type": "object",
+            "required": [
+              "method"
+            ],
+            "properties": {
+              "method": {
+                "const": "computed"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "description": "A verified claim must cite evidence (D-016). Never author verified by hand.",
+      "if": {
+        "properties": {
+          "status": {
+            "const": "verified"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "evidence": {
+            "minItems": 1,
+            "type": "array"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "status": {
+      "type": "string",
+      "description": "Editorial status pipeline (D-003).",
+      "enum": [
+        "ai_suggested",
+        "under_review",
+        "verified",
+        "disputed",
+        "deprecated"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "description": "Evidential strength (D-008). The 0-100 display score is derived, not entered (D-019).",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "not_assessed"
+      ]
+    },
+    "basis": {
+      "type": "string",
+      "description": "Type of evidence (§8, D-008, D-011). narrative_sequence and traditional mark rough placements.",
+      "enum": [
+        "biblical_text",
+        "archaeology",
+        "radiometric",
+        "documentary",
+        "tradition",
+        "scholarly_consensus",
+        "minority_view",
+        "speculation",
+        "narrative_sequence",
+        "traditional",
+        "not_assessed"
+      ]
+    }
+  }
+}

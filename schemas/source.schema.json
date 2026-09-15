@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/source.schema.json",
+  "title": "Source",
+  "description": "A citable authority with tier (1 primary → 6 low confidence), locator, original language and inspection status (§8, D-016). A source that was found but not retrieved is discovered and may not be cited as evidence.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "source"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^source/"
+        }
+      },
+      "required": [
+        "tier",
+        "source_type",
+        "inspection_status",
+        "locator"
+      ],
+      "type": "object"
+    },
+    {
+      "if": {
+        "properties": {
+          "inspection_status": {
+            "const": "inspected"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "retrieved_at",
+          "captured_passages"
+        ],
+        "properties": {
+          "captured_passages": {
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "type": "object"
+      }
+    }
+  ],
+  "properties": {
+    "tier": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 6
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "book",
+        "chapter",
+        "article",
+        "website",
+        "database_record",
+        "edition",
+        "manuscript"
+      ]
+    },
+    "inspection_status": {
+      "type": "string",
+      "enum": [
+        "discovered",
+        "inspected"
+      ]
+    },
+    "inspection_method": {
+      "type": "string",
+      "description": "fetched = URL/DOI resolved by a connector; offline = printed source with page reference and typed excerpt (CONTRIBUTING: inspected-offline).",
+      "enum": [
+        "fetched",
+        "offline"
+      ]
+    },
+    "locator": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "doi": {
+          "type": "string"
+        },
+        "isbn": {
+          "type": "string"
+        },
+        "pages": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "original_language": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/bcp47"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "year": {
+      "type": "integer"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "captured_passages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "locator",
+          "text",
+          "lang"
+        ],
+        "properties": {
+          "locator": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lang": {
+            "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/bcp47"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,9 @@
+schema: place
+expect: valid
+doc:
+  id: place/lachish
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: place
+  label: {en: Lachish}
+  external_ids: {pleiades: "687860", wikidata: Q1170218, british_museum_place: "x"}
+  geometry: {type: Point, coordinates: [34.849, 31.565]}

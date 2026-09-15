@@ -1,0 +1,9 @@
+schema: passage
+expect: valid
+doc:
+  id: passage/isa-36
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: passage
+  label: {en: Isaiah 36}
+  work: {ref: work/isaiah}
+  external_ids: {osis: Isa.36}

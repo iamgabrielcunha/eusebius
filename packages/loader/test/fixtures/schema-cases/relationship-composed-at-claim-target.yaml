@@ -1,0 +1,10 @@
+schema: relationship
+expect: valid
+doc:
+  type: COMPOSED_AT
+  target: {claim: "#composition-unified-8c"}
+  explanation: {en: x}
+  strength: interpretive
+  evidence_direction: neither
+  status: under_review
+  evidence: []

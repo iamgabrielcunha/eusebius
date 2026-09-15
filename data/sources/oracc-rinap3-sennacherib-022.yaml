@@ -1,0 +1,37 @@
+id: source/oracc-rinap3-sennacherib-022
+uuid: 66fa86c5-6772-47cf-a0bc-a938688f71b5
+type: source
+label: {en: "RINAP 3/1 Sennacherib 022 — annotated edition (ORACC)"}
+summary:
+  en: "Grayson and Novotny's edition of Sennacherib's annals text 22 (Taylor Prism and parallels) in The Royal Inscriptions of Sennacherib, King of Assyria (704–681 BC), Part 1, published online by the ORACC RINAP project under CC BY-SA 3.0. Transliteration and English translation."
+tier: 1
+source_type: edition
+authors: ["A. Kirk Grayson", "Jamie Novotny"]
+year: 2012
+original_language: akk
+inspection_status: inspected
+inspection_method: fetched
+retrieved_at: "2026-09-15T09:56:23Z"
+locator:
+  url: "https://oracc.museum.upenn.edu/rinap/rinap3/Q003496/"
+captured_passages:
+  - locator: "catalogue header"
+    text: "Sennacherib 022 Numbers Q003496 … Details prism Neo-Assyrian Written ca. 704-681 Kuyunjik (Nineveh) Royal Inscription Sennacherib Sources [EX001] A 02793 [EX002] Sm 1026 [EX003] BM 033019 [EX004] BM 091032 [EX005] BM 099327 [EX006] BM 103218"
+    lang: en
+  - locator: "ii 37"
+    text: "On my third campaign, I marched to the land Ḫatti."
+    lang: en
+  - locator: "iii 18–27a"
+    text: "Moreover, (as for) Hezekiah of the land Judah, who had not submitted to my yoke, I surrounded (and) conquered forty-six of his fortified cities, fortresses, and small(er) settlements in their environs, which were without number, by having ramps trodden down and battering rams brought up, the assault of foot soldiers, sapping, breaching, and siege engines. I brought out of them 200,150 people, young (and) old, male and female, horses, mules, donkeys, camels, oxen, and sheep and goats, which were without number, and I counted (them) as booty."
+    lang: en
+  - locator: "iii 27b–34"
+    text: "As for him (Hezekiah), I confined him inside the city Jerusalem, his royal city, like a bird in a cage. I set up blockades against him and made him dread exiting his city gate. I detached from his land the cities of his that I had plundered and I gave (them) to Mitinti, the king of the city Ashdod, Padî, the king of the city Ekron, and Ṣilli-Bēl, the king of the city Gaza, and (thereby) made his land smaller."
+    lang: en
+  - locator: "iii 16"
+    text: "ù mḫa-za-qi-a-ú KUR.ia-ú-da-a-a ša la ik-nu-šú"
+    lang: akk
+  - locator: "colophon / rights"
+    text: "Created by A. Kirk Grayson, Jamie Novotny, and the Royal Inscriptions of the Neo-Assyrian Period (RINAP) Project, 2012. Lemmatized by Jamie Novotny, 2011. The annotated edition is released under the Creative Commons Attribution Share-Alike license 3.0. Please cite this page as http://oracc.org/rinap/Q003496/."
+    lang: en
+notes:
+  en: "Fetched on 15 September 2026 with curl; the server's TLS certificate chain was incomplete that day, so certificate verification was disabled for the fetch. The iii 18–27a passage was assembled from the Q003496 rendering; the 200,150-people clause was cross-checked against the parallel text Q003497 (Sennacherib 023) fetched the same day."

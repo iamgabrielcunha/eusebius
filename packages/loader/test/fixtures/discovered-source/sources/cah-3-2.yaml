@@ -1,0 +1,8 @@
+id: source/cah-3-2
+uuid: 22222222-2222-4222-8222-222222222222
+type: source
+label: {en: "Cambridge Ancient History III.2"}
+tier: 2
+source_type: book
+inspection_status: discovered
+locator: {isbn: "9780521227179"}

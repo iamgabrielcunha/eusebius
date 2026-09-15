@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/date.schema.json",
+  "title": "Date value",
+  "description": "A date is a point on a continuous number line in astronomical year numbering (year 0 exists; 586 BC is -585). Precision lives on the claim, not the value (D-008). Model A values are computed from anchors and offsets, never typed in (D-007).",
+  "$ref": "#/$defs/date-value",
+  "$defs": {
+    "year": {
+      "type": "number",
+      "description": "Astronomical year as a float. 701 BC = -700. AD 30 = 30."
+    },
+    "precision": {
+      "type": "string",
+      "enum": [
+        "day",
+        "month",
+        "year",
+        "decade",
+        "century",
+        "era",
+        "not_assessed",
+        "not_applicable"
+      ]
+    },
+    "absolute": {
+      "type": "object",
+      "required": [
+        "method",
+        "year"
+      ],
+      "properties": {
+        "method": {
+          "const": "absolute"
+        },
+        "year": {
+          "$ref": "#/$defs/year"
+        }
+      },
+      "additionalProperties": false
+    },
+    "range": {
+      "type": "object",
+      "description": "Earliest and latest; either may be omitted for an open-ended range, but not both.",
+      "required": [
+        "method"
+      ],
+      "properties": {
+        "method": {
+          "const": "range"
+        },
+        "earliest": {
+          "$ref": "#/$defs/year"
+        },
+        "latest": {
+          "$ref": "#/$defs/year"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "earliest"
+          ],
+          "type": "object"
+        },
+        {
+          "required": [
+            "latest"
+          ],
+          "type": "object"
+        }
+      ],
+      "additionalProperties": false
+    },
+    "computed": {
+      "type": "object",
+      "description": "anchor +/- offsets, resolved by the chronology engine (Stage 2) under an AssumptionSet.",
+      "required": [
+        "method",
+        "anchor"
+      ],
+      "properties": {
+        "method": {
+          "const": "computed"
+        },
+        "anchor": {
+          "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+        },
+        "offset_years": {
+          "type": "number",
+          "description": "A direct interval from the anchor in years (negative = earlier)."
+        },
+        "chain": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "offset",
+              "direction"
+            ],
+            "properties": {
+              "offset": {
+                "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+              },
+              "direction": {
+                "type": "string",
+                "enum": [
+                  "forward",
+                  "backward"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "derivation": {
+          "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "offset_years"
+          ],
+          "type": "object"
+        },
+        {
+          "required": [
+            "chain"
+          ],
+          "type": "object"
+        }
+      ],
+      "additionalProperties": false
+    },
+    "date-value": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/absolute"
+        },
+        {
+          "$ref": "#/$defs/range"
+        },
+        {
+          "$ref": "#/$defs/computed"
+        }
+      ]
+    }
+  }
+}

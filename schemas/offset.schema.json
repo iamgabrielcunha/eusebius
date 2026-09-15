@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/offset.schema.json",
+  "title": "Offset",
+  "description": "A relative interval claim from Scripture with its textual variants, e.g. Genesis 5:3 — 130 (MT) / 230 (LXX) (§8, D-007). from and to name an entity and a moment (birth, accession, death…).",
+  "type": "object",
+  "required": [
+    "id",
+    "uuid",
+    "label",
+    "from",
+    "to",
+    "unit",
+    "variants",
+    "precision",
+    "confidence",
+    "basis",
+    "status",
+    "evidence",
+    "why_uncertain"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^offset/[a-z0-9][a-z0-9-]*$"
+    },
+    "uuid": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/uuid"
+    },
+    "label": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "description": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "from": {
+      "$ref": "#/$defs/moment"
+    },
+    "to": {
+      "$ref": "#/$defs/moment"
+    },
+    "passage": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    },
+    "citation_osis": {
+      "type": "string",
+      "description": "OSIS reference of the verse stating the interval, when no Passage entity exists yet."
+    },
+    "unit": {
+      "const": "years"
+    },
+    "variants": {
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "MT": {
+          "type": "number"
+        },
+        "LXX": {
+          "type": "number"
+        },
+        "SP": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "precision": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/date.schema.json#/$defs/precision"
+    },
+    "confidence": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/claim.schema.json#/$defs/confidence"
+    },
+    "basis": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/claim.schema.json#/$defs/basis"
+    },
+    "status": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/claim.schema.json#/$defs/status"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/evidence.schema.json"
+      }
+    },
+    "why_uncertain": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "moment": {
+      "type": "object",
+      "required": [
+        "entity",
+        "moment"
+      ],
+      "properties": {
+        "entity": {
+          "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+        },
+        "moment": {
+          "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/slug"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,18 @@
+id: tradition/reformed
+uuid: 684ad874-c590-4b76-a74a-0a77022315ff
+type: tradition
+label: {en: "Reformed tradition", pt-BR: "Tradição Reformada"}
+summary:
+  en: "The branch of Protestantism shaped by Zwingli, Bullinger and Calvin and codified in the Reformed confessions (Heidelberg Catechism, Belgic Confession, Westminster Standards, 1689 Baptist Confession). Marked by covenant theology, the sovereignty of God in salvation, and a forensic doctrine of justification."
+  pt-BR: "O ramo do protestantismo moldado por Zuínglio, Bullinger e Calvino e codificado nas confissões reformadas (Catecismo de Heidelberg, Confissão Belga, Padrões de Westminster, Confissão Batista de 1689). Marcado pela teologia da aliança, pela soberania de Deus na salvação e por uma doutrina forense da justificação."
+external_ids: {wikidata: Q101849}
+relationships:
+  - id: discusses-justification
+    type: DISCUSSES
+    target: {ref: concept/justification}
+    explanation:
+      en: "Justification by faith alone is a defining article of the Reformed confessions; the tradition's View is recorded on the concept."
+    strength: interpretive
+    evidence_direction: source_to_target
+    status: ai_suggested
+    evidence: []

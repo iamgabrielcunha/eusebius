@@ -1,0 +1,78 @@
+id: person/hezekiah
+uuid: f8ecbdf8-878b-4a42-b948-2d11d3f87822
+type: person
+label: {en: "Hezekiah", pt-BR: "Ezequias"}
+original: {text: "חִזְקִיָּהוּ", lang: hbo, script: Hebr, transliteration: "Ḥizqiyyāhū"}
+aliases:
+  - {en: "Ezekias", grc: "Ἐζεκίας"}
+  - {en: "Hezekiah of the land Judah (Assyrian: Ḫazaqiāu)", akk: "ḫa-za-qi-a-ú"}
+summary:
+  en: "King of Judah in the late eighth century BC, remembered for religious reform, the Siloam tunnel, and surviving Sennacherib's campaign of 701 BC."
+  pt-BR: "Rei de Judá no final do século VIII a.C., lembrado pela reforma religiosa, pelo túnel de Siloé e por sobreviver à campanha de Senaqueribe em 701 a.C."
+external_ids: {wikidata: Q244912}
+claims:
+  - id: accession-b
+    kind: date
+    property: accession
+    model: {ref: model/b-conventional-historical}
+    value: {method: range, earliest: -726, latest: -714}
+    precision: year
+    confidence: medium
+    basis: scholarly_consensus
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "2 Kings 18:1 (third year of Hoshea, c. 729/728 BC) and 2 Kings 18:13 (fourteenth year = 701 BC, implying 715 BC) cannot both be accession dates; reconstructions place accession between 727 and 715 BC, some with a coregency. No source has yet been fetched."
+  - id: accession-a
+    kind: date
+    property: accession
+    model: {ref: model/a-biblical-literal}
+    assumption_set: {ref: assumption-set/mt-early-exodus-thiele}
+    value:
+      method: computed
+      anchor: {ref: anchor/fall-of-jerusalem-586}
+      offset_years: -129
+      derivation:
+        en: "Back from the 586 BC anchor through the Judahite regnal chain (Zedekiah 11, Jehoiakim 11, Josiah 31, Amon 2, Manasseh 55 with coregency, Hezekiah) as reconciled by Thiele's method. The interval is a placeholder until the Stage 2 engine computes it from Offset entities."
+    precision: year
+    confidence: medium
+    basis: biblical_text
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "Depends on the coregency switch and on inclusive versus exclusive counting; the chain of Offset entities is not yet recorded, so this value is a hand-estimated interval flagged for the engine."
+  - id: death-a
+    kind: date
+    property: death
+    model: {ref: model/a-biblical-literal}
+    assumption_set: {ref: assumption-set/mt-early-exodus-thiele}
+    value:
+      method: computed
+      anchor: {ref: anchor/fall-of-jerusalem-586}
+      offset_years: -129
+      chain:
+        - {offset: {ref: offset/hezekiah-reign-length}, direction: forward}
+    precision: year
+    confidence: medium
+    basis: biblical_text
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "Accession plus the twenty-nine years of 2 Kings 18:2; inherits the accession uncertainty and the inclusive/exclusive counting question."
+relationships:
+  - id: participated-in-701
+    type: PARTICIPATED_IN
+    target: {ref: event/sennacherib-campaign-701}
+    explanation:
+      en: "Sennacherib's own annals name Hezekiah of Judah as the king whose forty-six fortified cities were taken and who was confined in Jerusalem."
+      pt-BR: "Os anais do próprio Senaqueribe nomeiam Ezequias de Judá como o rei cujas quarenta e seis cidades fortificadas foram tomadas e que foi confinado em Jerusalém."
+    strength: direct
+    evidence_direction: both
+    status: under_review
+    evidence:
+      - source: {ref: source/oracc-rinap3-sennacherib-022}
+        locator: "iii 18–27a"
+        captured_passage:
+          text: "Moreover, (as for) Hezekiah of the land Judah, who had not submitted to my yoke, I surrounded (and) conquered forty-six of his fortified cities, fortresses, and small(er) settlements in their environs, which were without number, by having ramps trodden down and battering rams brought up, the assault of foot soldiers, sapping, breaching, and siege engines."
+          lang: en
+        demonstrates: demonstrates

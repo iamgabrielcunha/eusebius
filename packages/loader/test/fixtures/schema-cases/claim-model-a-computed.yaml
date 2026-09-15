@@ -1,0 +1,20 @@
+schema: claim
+expect: valid
+doc:
+  id: a
+  kind: date
+  property: campaign
+  model: {ref: model/a-biblical-literal}
+  assumption_set: {ref: assumption-set/mt-early-exodus-thiele}
+  value:
+    method: computed
+    anchor: {ref: anchor/fall-of-jerusalem-586}
+    offset_years: -115
+    chain:
+      - {offset: {ref: offset/hezekiah-reign-length}, direction: backward}
+  precision: year
+  confidence: medium
+  basis: biblical_text
+  status: ai_suggested
+  evidence: []
+  why_uncertain: {en: x}

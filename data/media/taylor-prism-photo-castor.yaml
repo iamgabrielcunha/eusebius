@@ -1,0 +1,21 @@
+id: media/taylor-prism-photo-castor
+uuid: b96391cc-589d-4da2-821d-b74791b8a6bb
+type: media
+label: {en: "Taylor Prism, British Museum (photograph by David Castor)", pt-BR: "Prisma de Taylor, Museu Britânico (fotografia de David Castor)"}
+summary:
+  en: "Colour photograph of the Taylor Prism on display in the British Museum, 1060 × 2208 px. Uploaded to Wikimedia Commons as the photographer's own work and released into the public domain."
+media_type: image
+licence: public-domain
+copyright_status: public_domain
+attribution: "David Castor (user:dcastor), own work, via Wikimedia Commons, public domain"
+rights_holder: "David Castor (released to the public domain)"
+relevance: high
+nature: primary_evidence
+storage: linked
+url: "https://upload.wikimedia.org/wikipedia/commons/d/de/Taylor_Prism-1.jpg"
+external_ids:
+  wikimedia_commons: "File:Taylor_Prism-1.jpg"
+depicts:
+  - {ref: artefact/taylor-prism}
+notes:
+  en: "Rights metadata read from the Commons imageinfo API on 15 September 2026: LicenseShortName 'Public domain', Artist 'David Castor (user:dcastor)', Credit 'Own work', AttributionRequired false, Copyrighted False, DateTimeOriginal 2009-04-20. The photograph is linked, not stored, until Stage 8 decides on a media store."

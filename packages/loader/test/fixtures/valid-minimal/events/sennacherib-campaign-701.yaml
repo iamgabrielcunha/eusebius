@@ -1,0 +1,20 @@
+id: event/sennacherib-campaign-701
+uuid: 22222222-2222-4222-8222-222222222222
+type: event
+label: {en: "Sennacherib's campaign", pt-BR: "Campanha de Senaqueribe"}
+claims:
+  - id: date-b
+    kind: date
+    property: start
+    model: {ref: model/b-conventional-historical}
+    value: {method: absolute, year: -700}
+    precision: year
+    confidence: high
+    basis: documentary
+    status: under_review
+    evidence:
+      - source: {ref: source/oracc-rinap3-q003497}
+        locator: "iii 18-19"
+        captured_passage: {text: "As for Hezekiah of the land Judah…", lang: en}
+        demonstrates: strongly_supports
+    why_uncertain: {en: Assyrian eponym dating is secure to the year; the season is not.}

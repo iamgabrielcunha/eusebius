@@ -1,0 +1,12 @@
+id: assumption-set/mt-early-exodus-thiele
+uuid: 79bd5718-30c0-494b-8e24-0d7ecfd3fa77
+label: {en: "Masoretic numbers, early Exodus, Thiele regnal chronology"}
+description:
+  en: "Model A's default set (D-010): Masoretic Text figures for Genesis 5 and 11; 1 Kings 6:1 read literally (early Exodus); coregencies allowed and reign lengths reconciled by Thiele's method."
+model: {ref: model/a-biblical-literal}
+parameters:
+  numbers: MT
+  exodus: early
+  sojourn: egypt_only
+  coregencies: "on"
+  regnal_method: thiele

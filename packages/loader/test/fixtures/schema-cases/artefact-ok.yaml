@@ -1,0 +1,11 @@
+schema: artefact
+expect: valid
+doc:
+  id: artefact/taylor-prism
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: artefact
+  label: {en: Taylor Prism}
+  custody: {holder: {en: British Museum}, accession_number: "BM 91032", url: "https://www.britishmuseum.org/collection/object/W_1855-1003-1"}
+  evidence_analysis:
+    - {level: demonstrates, statement: {en: Sennacherib claims a campaign in Judah.}}
+    - {level: cannot_establish, statement: {en: Why the Assyrians withdrew.}}

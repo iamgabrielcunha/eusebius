@@ -1,0 +1,11 @@
+schema: relationship
+expect: invalid
+error_contains: telescoped
+doc:
+  type: ANCESTOR_OF
+  target: {ref: person/josiah}
+  explanation: {en: x}
+  strength: direct
+  evidence_direction: both
+  status: under_review
+  evidence: []

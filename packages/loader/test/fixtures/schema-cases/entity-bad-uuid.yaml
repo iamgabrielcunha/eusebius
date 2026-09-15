@@ -1,0 +1,8 @@
+schema: person
+expect: invalid
+error_contains: uuid
+doc:
+  id: person/hezekiah
+  uuid: not-a-uuid
+  type: person
+  label: {en: Hezekiah}

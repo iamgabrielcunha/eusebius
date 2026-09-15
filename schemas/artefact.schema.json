@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/artefact.schema.json",
+  "title": "Artefact",
+  "description": "A physical object with find context, custody, dating claims and an Evidence Analysis on the six-level scale (§8). Restricted institutional images are linked, never stored (D-017).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "artefact"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^artefact/"
+        }
+      },
+      "required": [
+        "evidence_analysis"
+      ],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "find_context": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "custody": {
+      "type": "object",
+      "required": [
+        "holder"
+      ],
+      "properties": {
+        "holder": {
+          "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+        },
+        "accession_number": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_analysis": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "level",
+          "statement"
+        ],
+        "properties": {
+          "level": {
+            "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/evidence.schema.json#/$defs/level"
+          },
+          "statement": {
+            "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/evidence.schema.json"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "unevaluatedProperties": false
+}

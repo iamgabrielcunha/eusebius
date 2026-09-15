@@ -1,0 +1,10 @@
+schema: relationship
+expect: valid
+doc:
+  type: NARRATES
+  target: {ref: event/sennacherib-campaign-701}
+  explanation: {en: Isaiah 36 recounts the Assyrian envoy at Jerusalem.}
+  strength: direct
+  evidence_direction: source_to_target
+  status: under_review
+  evidence: []

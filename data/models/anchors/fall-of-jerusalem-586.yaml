@@ -1,0 +1,13 @@
+id: anchor/fall-of-jerusalem-586
+uuid: 0ce3ea53-4f01-4e13-8e57-688195682b89
+label: {en: "Fall of Jerusalem to Nebuchadnezzar II, 586 BC", pt-BR: "Queda de Jerusalém para Nabucodonosor II, 586 a.C."}
+description:
+  en: "The anchor named in D-007 from which the Judahite regnal chain is computed backwards. Fixed by the Babylonian Chronicle and Nebuchadnezzar's regnal year 18/19 (2 Kings 25:8; Jeremiah 52:12)."
+year: -585
+precision: year
+confidence: high
+basis: documentary
+status: ai_suggested
+evidence: []
+why_uncertain:
+  en: "587 or 586 BC depends on whether Judah counted regnal years from Nisan or Tishri and on the reading of Nebuchadnezzar's 18th versus 19th year. No source has yet been fetched for this anchor, so it is ai_suggested."

@@ -2,6 +2,7 @@
   "name": "eusebius",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@12.4.1",
   "scripts": {
     "dev": "pnpm --filter @eusebius/web dev",

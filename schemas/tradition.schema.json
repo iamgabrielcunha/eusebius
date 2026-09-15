@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/tradition.schema.json",
+  "title": "Tradition",
+  "description": "A confessional community whose reading of a Concept is recorded as a View (§8).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "tradition"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^tradition/"
+        }
+      },
+      "required": [],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "parent": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    }
+  },
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,3 @@
+schema: date
+expect: valid
+doc: {method: range, latest: -700}

@@ -1,7 +1,7 @@
 # Phase 1 — Vision and Requirements
 
 **Project:** Bible & World History Research Platform (working title — see Stage 0 of the roadmap)
-**Status:** Draft v0.1 — 14 September 2026
+**Status:** Draft v0.2 — 15 September 2026 (§8 amended per D-020)
 **Owner:** Gabriel de Almeida Prado Cunha
 **Type:** Living document. When a decision in `01-decision-log.md` changes something here, update this file and note the decision ID.
 
@@ -118,17 +118,17 @@ These definitions govern the data model designed in Stage 1. A schema that contr
 
 **Artefact** — A physical object with find context, custody, dating claims and an Evidence Analysis (demonstrates / strongly supports / consistent with / may suggest / debated / cannot establish).
 
-**Source** — A citable authority with tier (1 primary → 6 low confidence), locator (page, URL, DOI), original language, and inspection status (discovered vs inspected).
+**Source** — A citable authority with tier (1 primary → 6 low confidence), locator (page, URL, DOI), original language, and inspection status (discovered vs inspected). An inspected source also records how it was inspected: fetched online, or offline from a printed copy with page reference and typed excerpt (D-016, D-020).
 
 **Media** — An image, video, 3D model, map or audio item with mandatory rights metadata, a relevance rating, and a nature flag (primary evidence vs later artistic interpretation).
 
-**Claim** — A statement about an entity: a date, an attribute, a relationship. Carries: model, value, precision, confidence, basis, status, and evidence.
+**Claim** — A statement about an entity: a date, an attribute, a relationship. Carries: model, value, precision, confidence, basis, status, and evidence. Date claims carry a chronological model; attribute claims and Views may be model-independent. (D-020)
 
 **Evidence** — A link from a claim to a source with a locator, the captured passage, and what the source demonstrates for the claim.
 
 **Interpretation** — A claim whose basis is interpretive, attributed to a tradition or scholar. Several may coexist on one entity.
 
-**Relationship** — A typed, directed edge between entities with an explanation, a strength (direct / strongly supported / interpretive / speculative), and evidence.
+**Relationship** — A typed, directed edge between entities with an explanation, a strength (direct / strongly supported / interpretive / speculative), an evidence direction (D-019), and evidence. One type is special: `COMPOSED_AT` points from a Passage or Work to a composition-date claim rather than to an entity (D-012, D-020).
 
 **Date** — A point on a continuous number line (astronomical year numbering, so year 0 exists and there is no gap), displayed as BC/AD or BCE/CE per user preference.
 
@@ -145,7 +145,7 @@ These definitions govern the data model designed in Stage 1. A schema that contr
 **Precision, Confidence, Basis** — The three dimensions of uncertainty. (D-008)
 - *Precision*: how wide the range is.
 - *Confidence*: how strong the evidential basis is.
-- *Basis*: biblical text / archaeology / radiometric / documentary / tradition / scholarly consensus / minority view / speculation.
+- *Basis*: biblical text / archaeology / radiometric / documentary / tradition / scholarly consensus / minority view / speculation; plus narrative sequence and traditional for rough placements (D-011). Stored as snake_case enum values (D-020).
 
 **Status** — `ai_suggested` → `under_review` → `verified`; also `disputed` and `deprecated`. Only `verified` claims render as ordinary content; everything else is badged. (D-003)
 

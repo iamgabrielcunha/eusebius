@@ -1,0 +1,11 @@
+schema: relationship
+expect: invalid
+error_contains: claim
+doc:
+  type: COMPOSED_AT
+  target: {ref: period/eighth-century}
+  explanation: {en: x}
+  strength: interpretive
+  evidence_direction: neither
+  status: under_review
+  evidence: []

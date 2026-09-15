@@ -1,0 +1,14 @@
+schema: claim
+expect: invalid
+error_contains: why_uncertain
+doc:
+  id: a
+  kind: date
+  property: accession
+  model: {ref: model/b-conventional-historical}
+  value: {method: absolute, year: -700}
+  precision: year
+  confidence: medium
+  basis: documentary
+  status: under_review
+  evidence: []

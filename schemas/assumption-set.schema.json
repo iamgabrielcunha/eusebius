@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/assumption-set.schema.json",
+  "title": "AssumptionSet",
+  "description": "Parameter values within a model: MT/LXX/SP numbers, early or late Exodus, sojourn counting, coregencies (§8, D-007, D-010).",
+  "type": "object",
+  "required": [
+    "id",
+    "uuid",
+    "label",
+    "model",
+    "parameters"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^assumption-set/[a-z0-9][a-z0-9-]*$"
+    },
+    "uuid": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/uuid"
+    },
+    "label": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "description": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "model": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    },
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "numbers": {
+          "type": "string",
+          "enum": [
+            "MT",
+            "LXX",
+            "SP"
+          ]
+        },
+        "exodus": {
+          "type": "string",
+          "enum": [
+            "early",
+            "late"
+          ]
+        },
+        "sojourn": {
+          "type": "string",
+          "enum": [
+            "egypt_only",
+            "including_canaan"
+          ]
+        },
+        "coregencies": {
+          "type": "string",
+          "enum": [
+            "on",
+            "off"
+          ]
+        },
+        "regnal_method": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
