@@ -58,4 +58,6 @@ tools/       importers, coverage reports, checks
 
 ## Current stage
 
-**Stage 0 complete.** Next: Stage 1 — Data model (JSON Schemas and loader).
+**Stage 1 complete (branch `stage-1-data-model`).** Schemas in `schemas/`, loader in `packages/loader` + `tools/load.ts`, sixteen example files in `data/`, tests under `packages/loader/test/`. Next: Stage 2 — Chronology engine.
+
+Stage 1 conventions: ids are `type/slug` plus an immutable `uuid`; every link is `{ref: …}`; claims are embedded under `claims:`; Model A dates are `method: computed`; see `schemas/README.md` and `docs/04-language-map-convention.md`.

@@ -1,7 +1,7 @@
 # Project Map
 
 **Status:** Living document. Update whenever a system is added, renamed or retired.
-**You are here:** Stage 0 complete → Stage 1 (Data model) next.
+**You are here:** Stage 1 (Data model) complete on branch `stage-1-data-model` → Stage 2 (Chronology engine) next.
 
 ---
 
@@ -137,8 +137,8 @@ eusebius/
 | Vision & requirements | Draft v0.1 | Review after Stage 1 |
 | Decision log | 19 entries; D-003, D-015, D-019 accepted this session | D-010, D-011 defaults to confirm |
 | Roadmap | Stages 0–11 defined | Stage 1 |
-| Data model | Definitions only | Stage 1 |
-| Chronology engine | Not started | Stage 2 |
+| Data model | 26 JSON Schemas, loader, 16 example files, 101 tests | Merge `stage-1-data-model`; confirm the four doc amendments in the Task 1 report |
+| Chronology engine | Not started; Offset/Anchor/AssumptionSet schemas ready | Stage 2 |
 | Seed data | Not started | Stage 3 |
 | Timeline | Not started | Stage 4 |
 | Design system | Direction only | Stage 4 |
