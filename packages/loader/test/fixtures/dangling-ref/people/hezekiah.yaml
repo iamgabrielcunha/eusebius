@@ -1,0 +1,12 @@
+id: person/hezekiah
+uuid: 11111111-1111-4111-8111-111111111111
+type: person
+label: {en: Hezekiah}
+relationships:
+  - type: PARENT_OF
+    target: {ref: person/nobody}
+    explanation: {en: x}
+    strength: direct
+    evidence_direction: both
+    status: ai_suggested
+    evidence: []

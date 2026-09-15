@@ -10,4 +10,4 @@ validate:
 	pnpm --filter @eusebius/loader run validate
 
 test:
-	pnpm run test --recursive
+	pnpm -r run test

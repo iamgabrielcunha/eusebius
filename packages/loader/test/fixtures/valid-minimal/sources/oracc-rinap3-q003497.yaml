@@ -1,0 +1,12 @@
+id: source/oracc-rinap3-q003497
+uuid: 33333333-3333-4333-8333-333333333333
+type: source
+label: {en: "RINAP 3/1 Sennacherib 22 (ORACC)"}
+tier: 1
+source_type: edition
+inspection_status: inspected
+inspection_method: fetched
+retrieved_at: "2026-09-15T09:00:00Z"
+locator: {url: "https://oracc.museum.upenn.edu/rinap/rinap3/Q003497/"}
+captured_passages:
+  - {locator: "iii 18-19", text: "As for Hezekiah of the land Judah…", lang: en}
