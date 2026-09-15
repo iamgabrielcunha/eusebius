@@ -50,15 +50,17 @@ ai_suggested → under_review → verified
 A citation exists only when the source was actually retrieved and the relevant passage captured. Specifically:
 
 - For a URL or DOI: the connector must have fetched it and stored the retrieved-at timestamp and the captured passage.
-- For a printed book: a page reference and a typed excerpt are required; the source is marked `inspected-offline`.
+- For a printed book: a page reference and a typed excerpt are required; the source is marked `inspection_status: inspected` with `inspection_method: offline` (D-020).
 - A source that was found but not retrieved is stored as `discovered` and may not be used as evidence for a `verified` claim.
 
 ## Data format
 
 - One YAML file per entity under `data/<subtype>/`.
 - All human-readable fields are language-keyed maps: `label: {en: "…", pt-BR: "…"}`.
-- Every claim includes: `model`, `value`, `precision`, `confidence`, `basis`, `status`, `evidence`.
-- Every relationship includes: `type`, `explanation`, `strength`, `evidence_direction`, `status`.
+- Every claim includes: `id`, `kind`, `model`, `value`, `precision`, `confidence`, `basis`, `status`, `evidence`, `why_uncertain`. Date claims name a model; attribute and view claims may use `model: model-independent` (D-020). Model A dates are `method: computed` (D-007).
+- Every entity has `id` (`type/slug`, matching its directory and filename) and an immutable `uuid`. Every cross-reference is written `{ref: type/slug}`; never a bare string.
+- Every relationship includes: `type`, `target`, `explanation`, `strength`, `evidence_direction`, `status`, `evidence`. `COMPOSED_AT` targets a claim (`{claim: "#local-id"}`); every other type targets an entity (D-012, D-020).
+- Enumerated values are lower snake_case (`under_review`, `narrative_sequence`, `strongly_supports`). See `schemas/README.md` for every enum.
 - Run `make validate` before opening a pull request. The loader will reject files with missing required fields.
 
 ## Developer Certificate of Origin

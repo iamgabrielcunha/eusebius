@@ -99,7 +99,7 @@ Format for every entry: Decision · Reason · Alternatives considered · Assumpt
 **Alternatives considered:** Omit entirely (loses context). Place without a badge (misrepresents — under the conventional model Methuselah has no evidential date, only a narrative position).
 **Assumptions:** Rough placements are hidden by default under Model B and shown by default under Model A; confirm.
 **Consequences:** The same mechanism serves places ("somewhere in Mesopotamia") and applies to spatial precision in the later map view.
-**Status:** Accepted (mechanism); Recommended (defaults)
+**Status:** Accepted (mechanism); Recommended (defaults). Spelling of basis values clarified by D-020.
 **Date:** 14 Sep 2026
 
 ### D-012 — Scripture has two relationships to time
@@ -108,7 +108,7 @@ Format for every entry: Decision · Reason · Alternatives considered · Assumpt
 **Alternatives considered:** One "date" per passage (unable to express the distinction).
 **Assumptions:** Composition positions are recorded as competing claims with their proponents.
 **Consequences:** The "Historical Context" panel for a passage uses `NARRATES`; the "Book" panel uses `COMPOSED_AT`.
-**Status:** Accepted
+**Status:** Accepted. Target of `COMPOSED_AT` clarified by D-020.
 **Date:** 14 Sep 2026
 
 ### D-013 — Genealogical edges distinguish direct descent from possibly telescoped descent
@@ -177,3 +177,18 @@ Two additional display rules:
 **Consequences:** Stage 1 adds an `evidence_direction` field to the Relationship schema. Stage 4 defines the score derivation, the gradient ramp, and the asymmetric edge rendering.
 **Status:** Accepted
 **Date:** 14 Sep 2026
+
+### D-020 — Stage 1 data-model conventions (clarifies §8, D-011, D-012, D-016)
+**Decision:** The Stage 1 schemas fix five conventions that the earlier documents left implicit or spelled differently:
+1. **Claims and models.** Date claims must name a chronological model. Attribute claims and Views (a Concept's per-Tradition reading) carry `model: model-independent`, because a theological View has no chronological model. §8 amended accordingly.
+2. **Enum spelling.** All enumerated values are lower snake_case, matching `ai_suggested` / `under_review`. D-011's `narrative-sequence` is stored as `narrative_sequence`; the six-level evidence scale is `demonstrates`, `strongly_supports`, `consistent_with`, `may_suggest`, `debated`, `cannot_establish`.
+3. **Inspection.** `inspection_status` keeps D-016's two values, `discovered` and `inspected`. How an inspected source was inspected is a separate field, `inspection_method: fetched | offline`. CONTRIBUTING's `inspected-offline` means `inspected` + `offline`.
+4. **`COMPOSED_AT` targets a claim.** A `COMPOSED_AT` relationship points from a Passage or Work to one of its own composition-date claims (`target: {claim: "#local-id"}`), so competing positions are competing claims (D-012). Every other relationship type targets an entity.
+5. **Connectedness.** For the loader's orphan report, a Concept View naming a Tradition, a claim's `attributed_to`, a Media item's `depicts`, and an Evidence link to a Source all count as connections, alongside Relationships.
+Also fixed in Stage 1 (roadmap "Decisions"): YAML files; ids `type/slug` plus an immutable UUIDv4; every cross-reference an object `{ref: …}`; claims embedded in the entity file; `external_ids` with pattern-checked `osis`, `pleiades`, `wikidata`.
+**Reason:** Each point surfaced while encoding §8 mechanically in JSON Schema; the schema must be unambiguous, and the documents should say what the schema enforces. Gabriel approved all five on 15 Sep 2026.
+**Alternatives considered:** A synthetic "model C" for non-chronological claims (misleading). Three-valued inspection status (mixes what with how). `COMPOSED_AT` targeting a Period entity (loses the competing-positions structure D-012 requires).
+**Assumptions:** The Stage 2 engine consumes `method: computed` date values exactly as the schema defines them.
+**Consequences:** `schemas/`, `docs/04-language-map-convention.md`, `CONTRIBUTING.md` and §8 agree. Future spellings follow snake_case.
+**Status:** Accepted
+**Date:** 15 Sep 2026

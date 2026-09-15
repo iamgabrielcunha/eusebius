@@ -54,15 +54,16 @@ If a schema contradicts a §8 definition, the schema is wrong. Amend §8 first, 
 - Passage requires `external_ids.osis` and `work`. Period requires `authority` (PeriodO). Concept requires `summary` and at least one `view` claim.
 - Every human-readable field is a language map. Bare strings are rejected.
 
-## Enum spellings versus the documents
+## Enum spellings and the documents
 
-| Document says | Schema uses | Why |
+The documents and the schema agree since D-020 (15 Sep 2026):
+
+| Convention | Schema | Recorded in |
 |---|---|---|
-| D-011 `narrative-sequence` | `narrative_sequence` | one spelling style (`ai_suggested`, `under_review`) across all enums |
-| CONTRIBUTING `inspected-offline` | `inspection_status: inspected` + `inspection_method: offline` | keeps D-016's two-value status; the method is a separate fact |
-| §8 "Claim carries model" | `model: model-independent` allowed on `attribute` and `view` claims | a View of justification has no chronological model; date claims must still name one |
-
-These are proposed amendments to the documents, listed in the Task 1 report; the schema will follow whichever spelling Gabriel confirms.
+| Rough-placement bases | `narrative_sequence`, `traditional` | D-011, D-020 |
+| Offline inspection | `inspection_status: inspected` + `inspection_method: offline` | D-016, D-020, CONTRIBUTING |
+| Non-chronological claims | `model: model-independent` on `attribute` and `view` claims; date claims must name a model | §8, D-020 |
+| `COMPOSED_AT` | targets a claim (`{claim: "#local-id"}`) | D-012, D-020 |
 
 ## Deferred (not needed by the ten examples)
 
