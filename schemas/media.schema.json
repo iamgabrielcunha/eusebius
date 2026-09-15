@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/media.schema.json",
+  "title": "Media",
+  "description": "An image, video, 3D model, map or audio item with mandatory rights metadata, a relevance rating and a nature flag (§8, D-017). NC, ND and restricted items must be storage: linked.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "media"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^media/"
+        }
+      },
+      "required": [
+        "media_type",
+        "licence",
+        "copyright_status",
+        "attribution",
+        "relevance",
+        "nature",
+        "storage",
+        "url"
+      ],
+      "type": "object"
+    },
+    {
+      "if": {
+        "properties": {
+          "licence": {
+            "not": {
+              "enum": [
+                "CC0-1.0",
+                "CC-BY-4.0",
+                "CC-BY-SA-4.0",
+                "public-domain"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "storage": {
+            "const": "linked"
+          }
+        }
+      }
+    }
+  ],
+  "properties": {
+    "media_type": {
+      "type": "string",
+      "enum": [
+        "image",
+        "video",
+        "model_3d",
+        "map",
+        "audio"
+      ]
+    },
+    "licence": {
+      "type": "string",
+      "enum": [
+        "CC0-1.0",
+        "CC-BY-4.0",
+        "CC-BY-SA-4.0",
+        "CC-BY-NC-4.0",
+        "CC-BY-NC-SA-4.0",
+        "CC-BY-ND-4.0",
+        "CC-BY-NC-ND-4.0",
+        "public-domain",
+        "all-rights-reserved",
+        "other"
+      ]
+    },
+    "licence_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "copyright_status": {
+      "type": "string",
+      "enum": [
+        "public_domain",
+        "copyrighted",
+        "unknown"
+      ]
+    },
+    "attribution": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Credit line as required by the licence. Exempt from the language-map rule."
+    },
+    "rights_holder": {
+      "type": "string"
+    },
+    "relevance": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "nature": {
+      "type": "string",
+      "enum": [
+        "primary_evidence",
+        "artistic_interpretation"
+      ]
+    },
+    "storage": {
+      "type": "string",
+      "enum": [
+        "stored",
+        "linked"
+      ]
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "depicts": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+      }
+    }
+  },
+  "unevaluatedProperties": false
+}

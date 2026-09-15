@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/concept.schema.json",
+  "title": "Concept",
+  "description": "A theological or intellectual idea. Holds a short accessible summary plus one View per relevant Tradition, recorded as claims of kind view (§8).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "concept"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^concept/"
+        }
+      },
+      "required": [
+        "summary",
+        "claims"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "claims": {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "view"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "type": "array"
+        }
+      }
+    }
+  ],
+  "properties": {},
+  "unevaluatedProperties": false
+}

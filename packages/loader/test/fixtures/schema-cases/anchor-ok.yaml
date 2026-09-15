@@ -1,0 +1,13 @@
+schema: anchor
+expect: valid
+doc:
+  id: anchor/fall-of-jerusalem-586
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  label: {en: "Fall of Jerusalem, 586 BC"}
+  year: -585
+  precision: year
+  confidence: high
+  basis: documentary
+  status: ai_suggested
+  evidence: []
+  why_uncertain: {en: 587 vs 586 depends on the Judahite calendar reckoning.}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/technology.schema.json",
+  "title": "Technology",
+  "description": "A technique, tool or material practice as a graph node (§8).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "technology"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^technology/"
+        }
+      },
+      "required": [],
+      "type": "object"
+    }
+  ],
+  "properties": {},
+  "unevaluatedProperties": false
+}

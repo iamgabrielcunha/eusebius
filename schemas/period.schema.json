@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/period.schema.json",
+  "title": "Period",
+  "description": "A named span as defined by a specific authority, following PeriodO (§8). authority must be a source.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "period"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^period/"
+        }
+      },
+      "required": [
+        "authority"
+      ],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "authority": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    }
+  },
+  "unevaluatedProperties": false
+}

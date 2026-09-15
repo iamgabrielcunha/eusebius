@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/relationship.schema.json",
+  "title": "Relationship",
+  "description": "A typed, directed edge from the entity whose file it lives in to a target (§8). Carries explanation, strength, evidence_direction (D-019), status and evidence. NARRATES and COMPOSED_AT are distinct (D-012); COMPOSED_AT targets a composition-date claim. ANCESTOR_OF carries telescoped (D-013).",
+  "type": "object",
+  "required": [
+    "type",
+    "target",
+    "explanation",
+    "strength",
+    "evidence_direction",
+    "status",
+    "evidence"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/slug"
+    },
+    "type": {
+      "$ref": "#/$defs/type"
+    },
+    "target": {
+      "oneOf": [
+        {
+          "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+        },
+        {
+          "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/claim-ref"
+        }
+      ]
+    },
+    "explanation": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "strength": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "strongly_supported",
+        "interpretive",
+        "speculative"
+      ]
+    },
+    "evidence_direction": {
+      "type": "string",
+      "description": "Which direction of the connection is evidenced (D-019). source_to_target: evidence supports subject→target only; target_to_source: the reverse; both; neither (inferred).",
+      "enum": [
+        "source_to_target",
+        "target_to_source",
+        "both",
+        "neither"
+      ]
+    },
+    "status": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/claim.schema.json#/$defs/status"
+    },
+    "telescoped": {
+      "type": "string",
+      "enum": [
+        "no",
+        "possible",
+        "certain"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/evidence.schema.json"
+      }
+    },
+    "why_uncertain": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "notes": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "ANCESTOR_OF"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "telescoped"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "const": "COMPOSED_AT"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "target": {
+            "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/claim-ref"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "target": {
+            "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "PARENT_OF",
+        "SPOUSE_OF",
+        "ANCESTOR_OF",
+        "NARRATES",
+        "COMPOSED_AT",
+        "PARTICIPATED_IN",
+        "TOOK_PLACE_AT",
+        "LOCATED_IN",
+        "PART_OF",
+        "MEMBER_OF",
+        "RULED",
+        "AUTHORED",
+        "ATTESTS",
+        "DEPICTS",
+        "DISCUSSES",
+        "ADHERES_TO",
+        "CONTEMPORARY_OF"
+      ]
+    }
+  }
+}

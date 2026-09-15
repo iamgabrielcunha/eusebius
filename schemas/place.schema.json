@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/place.schema.json",
+  "title": "Place",
+  "description": "A location with a geometry that may change over time. Linked to Pleiades and Wikidata via external_ids (§8). Time-varying geometry is deferred (schemas/README.md).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "place"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^place/"
+        }
+      },
+      "required": [],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "geometry": {
+      "type": "object",
+      "required": [
+        "type",
+        "coordinates"
+      ],
+      "properties": {
+        "type": {
+          "const": "Point"
+        },
+        "coordinates": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          },
+          "description": "[longitude, latitude] as in GeoJSON."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,15 @@
+schema: claim
+expect: valid
+doc:
+  id: view-reformed
+  kind: view
+  model: model-independent
+  value:
+    tradition: {ref: tradition/reformed}
+    summary: {en: Justification is a forensic declaration.}
+  precision: not_applicable
+  confidence: high
+  basis: tradition
+  status: under_review
+  evidence: []
+  why_uncertain: {en: Summaries compress internal diversity.}

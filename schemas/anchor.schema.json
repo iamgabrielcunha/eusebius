@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/anchor.schema.json",
+  "title": "Anchor",
+  "description": "An absolute date fixed by external evidence from which relative chains are computed, e.g. 586 BC, 853 BC (§8, D-007). Carries the full uncertainty triple (D-008).",
+  "type": "object",
+  "required": [
+    "id",
+    "uuid",
+    "label",
+    "year",
+    "precision",
+    "confidence",
+    "basis",
+    "status",
+    "evidence",
+    "why_uncertain"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^anchor/[a-z0-9][a-z0-9-]*$"
+    },
+    "uuid": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/uuid"
+    },
+    "label": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "description": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "event": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    },
+    "year": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/date.schema.json#/$defs/year"
+    },
+    "precision": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/date.schema.json#/$defs/precision"
+    },
+    "confidence": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/claim.schema.json#/$defs/confidence"
+    },
+    "basis": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/claim.schema.json#/$defs/basis"
+    },
+    "status": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/claim.schema.json#/$defs/status"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/evidence.schema.json"
+      }
+    },
+    "why_uncertain": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+schema: claim
+expect: invalid
+error_contains: model
+doc:
+  id: a
+  kind: date
+  property: accession
+  model: model-independent
+  value: {method: absolute, year: -700}
+  precision: year
+  confidence: medium
+  basis: documentary
+  status: under_review
+  evidence: []
+  why_uncertain: {en: x}

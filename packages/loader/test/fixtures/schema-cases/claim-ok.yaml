@@ -1,0 +1,14 @@
+schema: claim
+expect: valid
+doc:
+  id: accession-b
+  kind: date
+  property: accession
+  model: {ref: model/b-conventional-historical}
+  value: {method: range, earliest: -726, latest: -714}
+  precision: year
+  confidence: medium
+  basis: scholarly_consensus
+  status: under_review
+  evidence: []
+  why_uncertain: {en: Synchronisms with Assyrian records admit a range of reconstructions.}

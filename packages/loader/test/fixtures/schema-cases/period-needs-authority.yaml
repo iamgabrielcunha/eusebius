@@ -1,0 +1,8 @@
+schema: period
+expect: invalid
+error_contains: authority
+doc:
+  id: period/iron-age-ii
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: period
+  label: {en: Iron Age II}

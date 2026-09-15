@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/chronological-model.schema.json",
+  "title": "ChronologicalModel",
+  "description": "A named dating framework: biblical-literal, conventional-historical, geological/scientific (§8, D-010).",
+  "type": "object",
+  "required": [
+    "id",
+    "uuid",
+    "label",
+    "description"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^model/[a-z0-9][a-z0-9-]*$"
+    },
+    "uuid": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/uuid"
+    },
+    "label": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "description": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    },
+    "default_assumption_set": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    }
+  },
+  "additionalProperties": false
+}

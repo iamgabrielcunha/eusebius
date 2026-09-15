@@ -1,0 +1,8 @@
+schema: assumption-set
+expect: valid
+doc:
+  id: assumption-set/mt-early-exodus-thiele
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  label: {en: "Masoretic numbers, early Exodus, Thiele regnal chronology"}
+  model: {ref: model/a-biblical-literal}
+  parameters: {numbers: MT, exodus: early, coregencies: "on", regnal_method: thiele}

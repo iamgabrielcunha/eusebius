@@ -1,0 +1,10 @@
+schema: relationship
+expect: invalid
+error_contains: evidence_direction
+doc:
+  type: NARRATES
+  target: {ref: event/sennacherib-campaign-701}
+  explanation: {en: x}
+  strength: direct
+  status: under_review
+  evidence: []

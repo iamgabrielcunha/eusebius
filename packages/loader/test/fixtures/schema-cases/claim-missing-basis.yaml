@@ -1,0 +1,14 @@
+schema: claim
+expect: invalid
+error_contains: basis
+doc:
+  id: accession-b
+  kind: date
+  property: accession
+  model: {ref: model/b-conventional-historical}
+  value: {method: range, earliest: -726, latest: -714}
+  precision: year
+  confidence: medium
+  status: under_review
+  evidence: []
+  why_uncertain: {en: x}

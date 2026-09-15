@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/evidence.schema.json",
+  "title": "Evidence",
+  "description": "A link from a claim, relationship or analysis to a source, with a locator, the captured passage and what the source demonstrates (§8). The loader additionally rejects any evidence whose source is not inspection_status: inspected (D-016).",
+  "type": "object",
+  "required": [
+    "source",
+    "locator",
+    "captured_passage",
+    "demonstrates"
+  ],
+  "properties": {
+    "source": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    },
+    "locator": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Page, line numbers, URL fragment or DOI section."
+    },
+    "captured_passage": {
+      "type": "object",
+      "description": "The verbatim passage as retrieved. Exempt from the language-map rule; carries its own lang tag.",
+      "required": [
+        "text",
+        "lang"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lang": {
+          "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/bcp47"
+        }
+      },
+      "additionalProperties": false
+    },
+    "demonstrates": {
+      "$ref": "#/$defs/level"
+    },
+    "note": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "level": {
+      "type": "string",
+      "description": "The six-level evidence scale from §8.",
+      "enum": [
+        "demonstrates",
+        "strongly_supports",
+        "consistent_with",
+        "may_suggest",
+        "debated",
+        "cannot_establish"
+      ]
+    }
+  }
+}

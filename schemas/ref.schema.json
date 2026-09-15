@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json",
+  "title": "Identifiers and references",
+  "description": "Hybrid ID scheme: id is <singular type>/<slug>; uuid is an immutable v4. Every cross-file link is an object {ref: id}; a link to a claim is {claim: id#claim-id} or {claim: '#claim-id'} within the same file.",
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^(person|group|event|place|period|passage|work|concept|tradition|artefact|technology|source|media|language|term|model|assumption-set|anchor|offset)/[a-z0-9][a-z0-9-]*$"
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "ref": {
+      "type": "object",
+      "required": [
+        "ref"
+      ],
+      "properties": {
+        "ref": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim-ref": {
+      "type": "object",
+      "required": [
+        "claim"
+      ],
+      "properties": {
+        "claim": {
+          "type": "string",
+          "pattern": "^((person|group|event|place|period|passage|work|concept|tradition|artefact|technology|source|media|language|term)/[a-z0-9][a-z0-9-]*)?#[a-z0-9][a-z0-9-]*$"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

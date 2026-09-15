@@ -1,0 +1,15 @@
+schema: media
+expect: invalid
+error_contains: attribution
+doc:
+  id: media/prism-photo
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: media
+  label: {en: x}
+  media_type: image
+  licence: CC0-1.0
+  copyright_status: public_domain
+  relevance: high
+  nature: primary_evidence
+  storage: linked
+  url: "https://example.org/x.jpg"

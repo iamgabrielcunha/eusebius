@@ -1,0 +1,7 @@
+schema: evidence
+expect: invalid
+error_contains: captured_passage
+doc:
+  source: {ref: source/rinap-3}
+  locator: "lines iii 18–49"
+  demonstrates: demonstrates

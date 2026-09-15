@@ -1,0 +1,17 @@
+schema: offset
+expect: valid
+doc:
+  id: offset/hezekiah-reign-length
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  label: {en: Hezekiah reigned twenty-nine years}
+  from: {entity: {ref: person/hezekiah}, moment: accession}
+  to: {entity: {ref: person/hezekiah}, moment: death}
+  citation_osis: 2Kgs.18.2
+  unit: years
+  variants: {MT: 29, LXX: 29}
+  precision: year
+  confidence: high
+  basis: biblical_text
+  status: ai_suggested
+  evidence: []
+  why_uncertain: {en: Inclusive versus exclusive regnal counting.}

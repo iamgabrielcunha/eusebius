@@ -1,0 +1,10 @@
+schema: concept
+expect: invalid
+error_contains: contains
+doc:
+  id: concept/justification
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: concept
+  label: {en: Justification}
+  summary: {en: x}
+  claims: []

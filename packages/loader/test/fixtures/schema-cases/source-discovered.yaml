@@ -1,0 +1,11 @@
+schema: source
+expect: valid
+doc:
+  id: source/rinap-3-sennacherib-22
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: source
+  label: {en: RINAP 3 Sennacherib 22}
+  tier: 1
+  source_type: edition
+  inspection_status: discovered
+  locator: {url: "https://oracc.museum.upenn.edu/rinap/rinap3/Q003497/"}

@@ -2,8 +2,22 @@
   "name": "@eusebius/loader",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
-    "validate": "echo 'Loader not yet implemented (Stage 1)'",
-    "load": "echo 'Loader not yet implemented (Stage 1)'"
+    "validate": "node ../../tools/load.ts --validate-only",
+    "load": "node ../../tools/load.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "pg": "^8.13.1",
+    "yaml": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.6",
+    "vitest": "^2.1"
   }
 }

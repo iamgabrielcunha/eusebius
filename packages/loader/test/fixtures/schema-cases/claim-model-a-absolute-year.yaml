@@ -1,0 +1,15 @@
+schema: claim
+expect: invalid
+error_contains: computed
+doc:
+  id: a
+  kind: date
+  property: accession
+  model: {ref: model/a-biblical-literal}
+  value: {method: absolute, year: -700}
+  precision: year
+  confidence: medium
+  basis: biblical_text
+  status: under_review
+  evidence: []
+  why_uncertain: {en: x}

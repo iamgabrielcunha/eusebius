@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/passage.schema.json",
+  "title": "Passage",
+  "description": "A canonical scripture reference using OSIS ids (§8). Relates to time in two ways, never merged: NARRATES an event; COMPOSED_AT a date claim (D-012).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "passage"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^passage/"
+        }
+      },
+      "required": [
+        "work",
+        "external_ids"
+      ],
+      "type": "object"
+    },
+    {
+      "properties": {
+        "external_ids": {
+          "required": [
+            "osis"
+          ],
+          "type": "object"
+        }
+      }
+    }
+  ],
+  "properties": {
+    "work": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    }
+  },
+  "unevaluatedProperties": false
+}

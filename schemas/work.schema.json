@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/work.schema.json",
+  "title": "Work",
+  "description": "A text or document: a biblical book, confession, treatise, inscription, chronicle (§8). Composition dates are claims with property composition; COMPOSED_AT relationships point at them (D-012).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "work"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^work/"
+        }
+      },
+      "required": [],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "work_kind": {
+      "type": "string",
+      "enum": [
+        "biblical_book",
+        "confession",
+        "treatise",
+        "inscription",
+        "chronicle",
+        "letter",
+        "commentary",
+        "other"
+      ]
+    }
+  },
+  "unevaluatedProperties": false
+}

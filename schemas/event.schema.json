@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/event.schema.json",
+  "title": "Event",
+  "description": "Something that happened, or is narrated as having happened, with a temporal extent. Events nest via PART_OF relationships (§8).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "event"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^event/"
+        }
+      },
+      "required": [],
+      "type": "object"
+    }
+  ],
+  "properties": {},
+  "unevaluatedProperties": false
+}

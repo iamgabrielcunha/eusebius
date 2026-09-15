@@ -1,0 +1,15 @@
+schema: source
+expect: valid
+doc:
+  id: source/x
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: source
+  label: {en: X}
+  tier: 2
+  source_type: website
+  inspection_status: inspected
+  inspection_method: fetched
+  retrieved_at: "2026-09-15T10:00:00Z"
+  locator: {url: "https://example.org"}
+  captured_passages:
+    - {locator: "p. 1", text: "quoted", lang: en}

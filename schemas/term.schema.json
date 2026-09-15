@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/iamgabrielcunha/eusebius/schemas/term.schema.json",
+  "title": "Term",
+  "description": "An original-language term preserved alongside translations (§8, D-004).",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/entity.base.schema.json"
+    },
+    {
+      "properties": {
+        "type": {
+          "const": "term"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^term/"
+        }
+      },
+      "required": [
+        "original"
+      ],
+      "type": "object"
+    }
+  ],
+  "properties": {
+    "language": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/ref.schema.json#/$defs/ref"
+    },
+    "gloss": {
+      "$ref": "https://github.com/iamgabrielcunha/eusebius/schemas/language-map.schema.json#/$defs/language-map"
+    }
+  },
+  "unevaluatedProperties": false
+}

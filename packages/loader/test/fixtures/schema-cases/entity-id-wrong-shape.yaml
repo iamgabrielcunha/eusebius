@@ -1,0 +1,8 @@
+schema: person
+expect: invalid
+error_contains: id
+doc:
+  id: people/Hezekiah
+  uuid: 9b1d0f0a-2a2e-4c8b-9f3e-1c2d3e4f5a6b
+  type: person
+  label: {en: Hezekiah}
