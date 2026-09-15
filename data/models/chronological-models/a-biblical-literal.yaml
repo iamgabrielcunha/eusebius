@@ -1,0 +1,7 @@
+id: model/a-biblical-literal
+uuid: 14a59ff8-66a7-4907-8a83-8dd8a7f30646
+label: {en: "Model A — biblical-literal", pt-BR: "Modelo A — bíblico-literal"}
+description:
+  en: "Dates derived by computation from scriptural intervals (begetting ages, reign lengths, stated spans) chained to external anchors. Never typed in as absolutes; every date is anchor ± offsets under a chosen AssumptionSet (D-007)."
+  pt-BR: "Datas derivadas por cálculo a partir de intervalos bíblicos encadeados a âncoras externas, sob um conjunto de pressupostos escolhido (D-007)."
+default_assumption_set: {ref: assumption-set/mt-early-exodus-thiele}

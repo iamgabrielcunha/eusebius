@@ -1,0 +1,57 @@
+id: event/sennacherib-campaign-701
+uuid: 2c8a40a7-ce1a-4ac9-902b-1a91c5868aac
+type: event
+label: {en: "Sennacherib's campaign against Judah (701 BC)", pt-BR: "Campanha de Senaqueribe contra Judá (701 a.C.)"}
+summary:
+  en: "Sennacherib's third campaign: the Assyrian army moved down the Levantine coast, defeated an Egyptian force at Eltekeh, took the fortified cities of Judah including Lachish, and confined Hezekiah in Jerusalem, which was not taken."
+  pt-BR: "A terceira campanha de Senaqueribe: o exército assírio desceu a costa do Levante, derrotou uma força egípcia em Elteque, tomou as cidades fortificadas de Judá, incluindo Laquis, e confinou Ezequias em Jerusalém, que não foi tomada."
+external_ids: {wikidata: Q1267122}
+claims:
+  - id: date-b
+    kind: date
+    property: start
+    model: {ref: model/b-conventional-historical}
+    value: {method: absolute, year: -700}
+    precision: year
+    confidence: high
+    basis: documentary
+    status: under_review
+    evidence:
+      - source: {ref: source/oracc-rinap3-sennacherib-022}
+        locator: "ii 37"
+        captured_passage: {text: "On my third campaign, I marched to the land Ḫatti.", lang: en}
+        demonstrates: consistent_with
+        note:
+          en: "The prism establishes the campaign as Sennacherib's third; the absolute year 701 BC comes from the Assyrian eponym canon, not from the prism itself."
+    why_uncertain:
+      en: "The year is secure to within a year by Assyrian eponym dating; the season and duration are not. A minority reads the biblical account as conflating two campaigns."
+  - id: date-a
+    kind: date
+    property: start
+    model: {ref: model/a-biblical-literal}
+    assumption_set: {ref: assumption-set/mt-early-exodus-thiele}
+    value:
+      method: computed
+      anchor: {ref: anchor/fall-of-jerusalem-586}
+      offset_years: -115
+      derivation:
+        en: "Hezekiah's fourteenth year (2 Kings 18:13) counted from the computed accession; equivalently 115 years before the 586 BC anchor under the Thiele reconciliation."
+    precision: year
+    confidence: medium
+    basis: biblical_text
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "2 Kings 18:13 places the invasion in Hezekiah's fourteenth year, which conflicts with 18:1 unless a coregency or a later dating of the fourteenth year is assumed."
+relationships:
+  - id: took-place-at-lachish
+    type: TOOK_PLACE_AT
+    target: {ref: place/lachish}
+    explanation:
+      en: "The siege of Lachish is depicted on the reliefs from Sennacherib's palace at Nineveh and is presupposed by 2 Kings 18:14, 17, where Hezekiah's envoys go to the Assyrian king at Lachish."
+    strength: strongly_supported
+    evidence_direction: source_to_target
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "The prism does not name Lachish; the identification rests on the Nineveh reliefs and the biblical narrative, neither of which has yet been fetched as a source."

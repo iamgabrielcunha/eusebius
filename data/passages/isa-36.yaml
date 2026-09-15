@@ -1,0 +1,24 @@
+id: passage/isa-36
+uuid: cd2efdea-7c68-46e2-a030-73c745ae4df0
+type: passage
+label: {en: "Isaiah 36", pt-BR: "Isaías 36"}
+summary:
+  en: "The Rabshakeh's speech before the walls of Jerusalem during Sennacherib's campaign; parallel to 2 Kings 18:13–37."
+  pt-BR: "O discurso do Rabsaqué diante das muralhas de Jerusalém durante a campanha de Senaqueribe; paralelo a 2 Reis 18:13–37."
+work: {ref: work/isaiah}
+external_ids:
+  osis: Isa.36
+  wikidata: Q12525215
+relationships:
+  - id: narrates-701
+    type: NARRATES
+    target: {ref: event/sennacherib-campaign-701}
+    explanation:
+      en: "Isaiah 36 recounts the Assyrian envoy's demand for Jerusalem's surrender in Hezekiah's fourteenth year. The passage is dated by the event it narrates, not by its composition (D-012)."
+      pt-BR: "Isaías 36 narra a exigência de rendição de Jerusalém pelo enviado assírio no décimo quarto ano de Ezequias. A passagem é datada pelo evento que narra, não por sua composição (D-012)."
+    strength: direct
+    evidence_direction: source_to_target
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "The narrated event is secure; whether the speech is verbatim, composed, or redacted from 2 Kings is debated. No Bible text has yet been fetched as a source."

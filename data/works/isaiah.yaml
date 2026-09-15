@@ -1,0 +1,58 @@
+id: work/isaiah
+uuid: b429721c-73c3-4cd3-9f1f-0d70a61d2394
+type: work
+work_kind: biblical_book
+label: {en: "Book of Isaiah", pt-BR: "Livro de Isaías"}
+original: {text: "יְשַׁעְיָהוּ", lang: hbo, script: Hebr, transliteration: "Yəšaʿyāhū"}
+summary:
+  en: "The first of the Latter Prophets; sixty-six chapters ranging from the Assyrian crisis of the eighth century to the return from exile. Its composition date is a disputed claim with named positions, kept separate from the dates of the events it narrates (D-012)."
+  pt-BR: "O primeiro dos Profetas Posteriores; sessenta e seis capítulos que vão da crise assíria do século VIII ao retorno do exílio. Sua data de composição é uma afirmação disputada com posições nomeadas, mantida separada das datas dos eventos narrados (D-012)."
+external_ids: {wikidata: Q131458}
+claims:
+  - id: composition-unified-8c
+    kind: date
+    property: composition
+    model: {ref: model/b-conventional-historical}
+    value: {method: range, earliest: -740, latest: -680}
+    precision: decade
+    confidence: low
+    basis: traditional
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "The traditional position: the whole book is the work of Isaiah ben Amoz, active c. 740–700 BC, with chapters 40–66 as predictive prophecy. Held by conservative interpreters across traditions; a minority among critical scholars. No source has yet been fetched."
+    notes:
+      en: "Competing position: see composition-multiple-authors."
+  - id: composition-multiple-authors
+    kind: date
+    property: composition
+    model: {ref: model/b-conventional-historical}
+    value: {method: range, earliest: -740, latest: -500}
+    precision: century
+    confidence: medium
+    basis: scholarly_consensus
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "The critical consensus since Duhm (1892): First Isaiah (1–39) largely eighth century; Second Isaiah (40–55) in the Babylonian exile c. 550–539 BC; Third Isaiah (56–66) post-exilic. Extent of later editing within 1–39 is debated. No source has yet been fetched."
+    notes:
+      en: "Competing position: see composition-unified-8c."
+relationships:
+  - id: composed-at-unified
+    type: COMPOSED_AT
+    target: {claim: "#composition-unified-8c"}
+    explanation:
+      en: "Position 1 — single eighth-century author. A COMPOSED_AT edge points at a composition-date claim, never at a narrated event (D-012)."
+    strength: interpretive
+    evidence_direction: neither
+    status: ai_suggested
+    evidence: []
+  - id: composed-at-multiple
+    type: COMPOSED_AT
+    target: {claim: "#composition-multiple-authors"}
+    explanation:
+      en: "Position 2 — composition across the eighth to fifth centuries by several hands."
+    strength: interpretive
+    evidence_direction: neither
+    status: ai_suggested
+    evidence: []

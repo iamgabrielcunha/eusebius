@@ -1,0 +1,28 @@
+id: place/lachish
+uuid: 9d02eb7f-290d-4d69-bc54-18b1f4520914
+type: place
+label: {en: "Lachish", pt-BR: "Laquis"}
+original: {text: "לָכִישׁ", lang: hbo, script: Hebr, transliteration: "Lāḵîš"}
+aliases:
+  - {en: "Lakisu (Assyrian)", akk: "Lakisu"}
+  - {en: "Tell ed-Duweir / Tel Lachish (modern)"}
+summary:
+  en: "Fortified city in the Judaean Shephelah, second only to Jerusalem in the kingdom of Judah; besieged and taken by Sennacherib in 701 BC."
+  pt-BR: "Cidade fortificada na Sefelá da Judeia, segunda apenas a Jerusalém no reino de Judá; sitiada e tomada por Senaqueribe em 701 a.C."
+external_ids:
+  pleiades: "687951"
+  wikidata: Q848509
+geometry: {type: Point, coordinates: [34.8491898, 31.5655212]}
+claims:
+  - id: identification
+    kind: attribute
+    property: modern-identification
+    model: model-independent
+    value: {en: "Tell ed-Duweir (Tel Lachish), Israel", pt-BR: "Tell ed-Duweir (Tel Laquis), Israel"}
+    precision: not_applicable
+    confidence: high
+    basis: archaeology
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "The identification is the scholarly consensus since Albright and the Lachish letters, but no excavation report has yet been fetched as a source. Coordinates are the Pleiades representative point (CC BY)."

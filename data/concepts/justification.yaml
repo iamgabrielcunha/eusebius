@@ -1,0 +1,43 @@
+id: concept/justification
+uuid: bc8c9221-4d50-4daf-909d-2478bffab670
+type: concept
+label: {en: "Justification", pt-BR: "Justificação"}
+original: {text: "δικαίωσις", lang: grc, script: Grek, transliteration: "dikaiōsis"}
+aliases:
+  - {en: "Rechtfertigung (German)", de: "Rechtfertigung"}
+  - {en: "iustificatio (Latin)", la: "iustificatio"}
+summary:
+  en: "How a sinner comes to be counted or made righteous before God. Every Christian tradition affirms that justification is by grace through Christ; they differ on whether it is a declaration or a transformation, on the role of faith and works, and on whether it can be lost."
+  pt-BR: "Como um pecador passa a ser considerado ou tornado justo diante de Deus. Toda tradição cristã afirma que a justificação é pela graça por meio de Cristo; diferem sobre se é uma declaração ou uma transformação, sobre o papel da fé e das obras, e sobre se pode ser perdida."
+external_ids: {wikidata: Q653345}
+claims:
+  - id: view-reformed
+    kind: view
+    model: model-independent
+    value:
+      tradition: {ref: tradition/reformed}
+      summary:
+        en: "A forensic act of God's free grace in which he pardons sin and accounts the sinner righteous, on the basis of Christ's righteousness imputed to them, received by faith alone and not for anything wrought in them (Westminster Confession 11.1). Justification is distinct from, though never separated from, sanctification."
+        pt-BR: "Um ato forense da livre graça de Deus, no qual ele perdoa o pecado e considera justo o pecador, com base na justiça de Cristo a ele imputada, recebida pela fé somente e não por algo nele operado (Confissão de Westminster 11.1). A justificação é distinta da santificação, embora nunca separada dela."
+    precision: not_applicable
+    confidence: high
+    basis: tradition
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "A one-paragraph summary of a confessional position; the Westminster Confession has not yet been fetched as a source, so the paraphrase is unverified."
+  - id: view-catholic
+    kind: view
+    model: model-independent
+    value:
+      tradition: {ref: tradition/catholic}
+      summary:
+        en: "Not only the remission of sins but also the sanctification and renewal of the inner person through the voluntary reception of grace, by which one becomes truly just; faith is the beginning, foundation and root of justification, which can be increased and can be lost through mortal sin (Council of Trent, Session 6, 1547)."
+        pt-BR: "Não apenas a remissão dos pecados, mas também a santificação e renovação do homem interior pela recepção voluntária da graça, pela qual alguém se torna verdadeiramente justo; a fé é o início, fundamento e raiz da justificação, que pode ser aumentada e perdida pelo pecado mortal (Concílio de Trento, Sessão 6, 1547)."
+    precision: not_applicable
+    confidence: high
+    basis: tradition
+    status: ai_suggested
+    evidence: []
+    why_uncertain:
+      en: "A one-paragraph summary of the Tridentine decree; the decree has not yet been fetched as a source, so the paraphrase is unverified."

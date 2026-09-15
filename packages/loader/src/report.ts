@@ -21,7 +21,12 @@ export function buildReport(files: LoadedFile[], errors: LoaderError[], dangling
       if (r?.target?.ref) connected.add(r.target.ref);
     }
     // Media depicting an entity and evidence citing a source count as connections.
-    for (const r of collectRefs(f)) if (/^\/depicts\/\d+$/.test(r.path) || /\/evidence\/\d+\/source$/.test(r.path)) { connected.add(r.target); connected.add(f.doc.id); }
+    // Media depicting an entity, evidence citing a source, a View naming a tradition, and attributed_to all count as connections.
+    for (const r of collectRefs(f)) {
+      if (/^\/depicts\/\d+$/.test(r.path) || /\/evidence\/\d+\/source$/.test(r.path) || /^\/claims\/\d+\/value\/tradition$/.test(r.path) || /^\/claims\/\d+\/attributed_to\/\d+$/.test(r.path)) {
+        connected.add(r.target); connected.add(f.doc.id);
+      }
+    }
   }
   const orphans = files
     .filter((f) => ENTITY_SCHEMAS.has(f.schema) && !connected.has(f.doc.id))

@@ -1,0 +1,75 @@
+id: artefact/taylor-prism
+uuid: c6ec51c7-2e11-4fc4-ba3d-9cddc879f060
+type: artefact
+label: {en: "Taylor Prism (Sennacherib's annals)", pt-BR: "Prisma de Taylor (anais de Senaqueribe)"}
+summary:
+  en: "A six-sided baked-clay prism inscribed with Sennacherib's annals through his eighth campaign, one of three near-complete exemplars of the same text (with the Oriental Institute and Jerusalem prisms). Column iii records the third campaign against Judah and the confinement of Hezekiah in Jerusalem."
+  pt-BR: "Um prisma hexagonal de argila cozida inscrito com os anais de Senaqueribe até sua oitava campanha, um de três exemplares quase completos do mesmo texto. A coluna iii registra a terceira campanha contra Judá e o confinamento de Ezequias em Jerusalém."
+external_ids:
+  british_museum: "1855,1003.1"
+  rinap: "Sennacherib 022, exemplar 4"
+find_context:
+  en: "Kuyunjik (Nineveh); acquired by Colonel Robert Taylor in 1830 and purchased by the British Museum in 1855."
+custody:
+  holder: {en: "British Museum, London", pt-BR: "Museu Britânico, Londres"}
+  accession_number: "BM 91032"
+  url: "https://www.britishmuseum.org/collection/object/W_1855-1003-1"
+claims:
+  - id: written-b
+    kind: date
+    property: production
+    model: {ref: model/b-conventional-historical}
+    value: {method: range, earliest: -703, latest: -680}
+    precision: decade
+    confidence: high
+    basis: documentary
+    status: under_review
+    evidence:
+      - source: {ref: source/oracc-rinap3-sennacherib-022}
+        locator: "catalogue header"
+        captured_passage: {text: "prism Neo-Assyrian Written ca. 704-681 Kuyunjik (Nineveh) Royal Inscription Sennacherib", lang: en}
+        demonstrates: strongly_supports
+    why_uncertain:
+      en: "ORACC gives the reign-wide range ca. 704–681 BC for the text; the Taylor Prism's own colophon dates it to the eponymy of Bēl-ēmuranni (691 BC), which has not yet been checked against a fetched edition."
+evidence_analysis:
+  - level: demonstrates
+    statement:
+      en: "Sennacherib claimed a campaign into the Levant in which he took forty-six fortified cities of Judah and confined Hezekiah in Jerusalem."
+      pt-BR: "Senaqueribe reivindicou uma campanha ao Levante na qual tomou quarenta e seis cidades fortificadas de Judá e confinou Ezequias em Jerusalém."
+    evidence:
+      - source: {ref: source/oracc-rinap3-sennacherib-022}
+        locator: "iii 27b–34"
+        captured_passage:
+          text: "As for him (Hezekiah), I confined him inside the city Jerusalem, his royal city, like a bird in a cage. I set up blockades against him and made him dread exiting his city gate. I detached from his land the cities of his that I had plundered and I gave (them) to Mitinti, the king of the city Ashdod, Padî, the king of the city Ekron, and Ṣilli-Bēl, the king of the city Gaza, and (thereby) made his land smaller."
+          lang: en
+        demonstrates: demonstrates
+  - level: strongly_supports
+    statement:
+      en: "Jerusalem was not taken: the annals record a blockade and tribute, not the capture of the city, in an inscription that otherwise boasts of conquests."
+  - level: consistent_with
+    statement:
+      en: "The biblical account of Hezekiah's tribute (2 Kings 18:14–16) and of the Assyrian withdrawal without taking Jerusalem (2 Kings 19:35–36; Isaiah 37:36–37)."
+  - level: may_suggest
+    statement:
+      en: "That the campaign ended in a negotiated settlement rather than a decisive Assyrian victory, since the tribute is listed as sent afterwards to Nineveh."
+  - level: debated
+    statement:
+      en: "Whether the prism and 2 Kings 18–19 describe one campaign (701 BC) or two, with a second Assyrian move against Judah after 690 BC."
+  - level: cannot_establish
+    statement:
+      en: "Why the Assyrian army withdrew from Jerusalem; the inscription is silent, and the biblical explanation (the angel of the Lord) and the Herodotean one (mice/plague) lie outside what the object can show."
+relationships:
+  - id: attests-701
+    type: ATTESTS
+    target: {ref: event/sennacherib-campaign-701}
+    explanation:
+      en: "The prism is the principal Assyrian primary source for the campaign of 701 BC."
+      pt-BR: "O prisma é a principal fonte primária assíria para a campanha de 701 a.C."
+    strength: direct
+    evidence_direction: both
+    status: under_review
+    evidence:
+      - source: {ref: source/oracc-rinap3-sennacherib-022}
+        locator: "ii 37"
+        captured_passage: {text: "On my third campaign, I marched to the land Ḫatti.", lang: en}
+        demonstrates: demonstrates

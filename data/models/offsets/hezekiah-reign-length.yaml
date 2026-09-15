@@ -1,0 +1,15 @@
+id: offset/hezekiah-reign-length
+uuid: 3c254948-9fb5-45bb-a994-0cfa87eed15e
+label: {en: "Hezekiah reigned twenty-nine years (2 Kings 18:2)", pt-BR: "Ezequias reinou vinte e nove anos (2 Reis 18:2)"}
+from: {entity: {ref: person/hezekiah}, moment: accession}
+to: {entity: {ref: person/hezekiah}, moment: death}
+citation_osis: 2Kgs.18.2
+unit: years
+variants: {MT: 29}
+precision: year
+confidence: high
+basis: biblical_text
+status: ai_suggested
+evidence: []
+why_uncertain:
+  en: "Regnal totals may be counted inclusively or exclusively and may include a coregency with Ahaz. Only the Masoretic figure is recorded here; the Septuagint figure has not been checked against a fetched edition."
